@@ -18,8 +18,8 @@ pointsToLabel <- c("Russia", "Venezuela", "Iraq", "Myanmar", "Sudan",
                    "United States", "Germany", "Britain", "Barbados", "Norway", "Japan",
                    "New Zealand", "Singapore")
 
-pl3 <- pl2 + geom_text(aes(label = Country), color = "gray20", 
-                       data = subset(df, Country %in% pointsToLabel),check_overlap = TRUE)
+pl3 <- pl2 + geom_text(data = subset(df, Country %in% pointsToLabel),aes(label = Country), color = "gray20", 
+                       check_overlap = TRUE)
 
 pl4 <- pl3 + theme_economist_white()
 pl5 <- pl4 + scale_x_continuous(name = "Corruption Perceptions Index, 2011 (10=least corrupt)",
